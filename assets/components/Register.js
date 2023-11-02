@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, TextInput, View } from 'react-native';
-import * as firebase from 'firebase';
+import {initializeApp,}from 'firebase/app';
 const firebaseConfig = {
     apiKey: "AIzaSyDzDo2ziayUdfIdx6p0VXfY9xRGyVrtsNM",
     authDomain: "formm-acb1c.firebaseapp.com",
@@ -51,7 +51,7 @@ onChangeText={(email)=>this.setState({email})}
       />
            <TextInput 
 placeholder="Password"
-onChangeText={(password)=>this.setState({passsword})}
+onChangeText={(password)=>this.setState({password})}
 secureTextEntry={true}
 
       />
@@ -65,4 +65,4 @@ secureTextEntry={true}
   }
 }
 
-export default Register
+export default Register;
