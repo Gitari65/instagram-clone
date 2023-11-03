@@ -1,20 +1,8 @@
-import React, { Component } from 'react'
-import { Button, TextInput, View } from 'react-native';
-import {initializeApp,}from 'firebase/app';
-const firebaseConfig = {
-    apiKey: "AIzaSyDzDo2ziayUdfIdx6p0VXfY9xRGyVrtsNM",
-    authDomain: "formm-acb1c.firebaseapp.com",
-    databaseURL: "https://formm-acb1c-default-rtdb.firebaseio.com",
-    projectId: "formm-acb1c",
-    storageBucket: "formm-acb1c.appspot.com",
-    messagingSenderId: "856859093776",
-    appId: "1:856859093776:web:637fcf1df16b5c18175395",
-    measurementId: "G-K35H5RZG1D"
-  };
+ import React, { Component } from 'react'
+ import { Button, TextInput, View } from 'react-native';
+  import * as firebase from 'firebase/app';
+  import 'firebase/auth';
 
-  if(firebase.apps.length===0){
-    firebase.initializeApp(firebaseConfig);
-  }
 export class Register extends Component {
   constructor(props){
 
