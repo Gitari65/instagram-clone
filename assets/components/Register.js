@@ -36,6 +36,9 @@ onChangeText={(name)=>this.setState({name})}
            <TextInput 
 placeholder="Email"
 onChangeText={(email)=>this.setState({email})}
+      />      <TextInput 
+placeholder="Email"
+onChangeText={(email)=>this.setState({email})}
       />
            <TextInput 
 placeholder="Password"
