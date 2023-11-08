@@ -25,16 +25,48 @@ const firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
   }
 const Stack = createStackNavigator();
-export default function App() {
-  return (
-    <NavigationContainer>
+
+import React, { Component } from 'react'
+
+export class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      loaded:false,
+    }
+  }
+  componentDidMount(){
+    firebase.auth().onAuthStateChanged((user)=>{
+      if(!user){
+        this.setState({
+          loggedIn:false,
+          loaded:true,
+        })
+      }
+  })
+
+  }
+  render() {
+    const{loggedIn,loaded}=this.state;
+    if(!loaded){
+      return(
+      <View style={{flex:1,justifyContent:'center'}}>
+        <Text>Loading</Text>
+        </View>);
+    }
+    return (
+      <NavigationContainer>
       <Stack.Navigator initialRouteName="Landing">
       <Stack.Screen name="Landing" component={Landing} options={{headerShown:false}} />
       <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-  
-  
+    
+  }
 }
+
+
+
+export default App
 
