@@ -12,7 +12,14 @@ export class Login extends Component {
         this.state={
             email:'',
             password:'',
+            errors:[]
         }
+        this.onSignUp=this.onSignUp.bind(this);
+
+    }
+    onSignUp(){
+      const{email,password}=this.state;
+      
 
     }
   render() {
@@ -20,7 +27,10 @@ export class Login extends Component {
         <View>
         <TextInput placeholder="Email" onChangeText={(email)=this.setState(email)} />
       <TextInput placeholder="Password" onChangeText={(password)=> this.setState(password)} secureTextEntry={true}/>    
-        </View>
+         <Button onPress={()=>this.onSignUp()} title="Sign In" />
+         </View>
+       
+
       
     )
   }
