@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 
 import { StyleSheet, Text, View ,Button} from 'react-native';
-import React from 'react';
 import { NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Landing from './assets/components/Landing';
@@ -52,6 +51,12 @@ export class App extends Component {
       return(
       <View style={{flex:1,justifyContent:'center'}}>
         <Text>Loading</Text>
+        </View>);
+    }
+    if(loggedIn){
+      return(
+      <View style={{flex:1,justifyContent:'center'}}>
+        <Text>User is Logged In</Text>
         </View>);
     }
     return (
