@@ -1,7 +1,7 @@
  import React, { Component } from 'react'
  import { Button, TextInput, View } from 'react-native';
   import * as firebase from 'firebase/app';
-  import 'firebase/auth';
+ 
 
 export class Register extends Component {
   constructor(props){
@@ -11,21 +11,24 @@ export class Register extends Component {
         name:'',
         email:'',
         password:'',
-        password_confirmation:'',
         errors:[]
         
     }
     this.onRegister=this.onRegister.bind(this);
   }
  
- onRegister(){
-    const {email,password,name}=this.state;
-    firebase.auth().createUserWithEmailAndPassword(email,password)
-    .then((result)=>{
-        console.log(result)
-    }).catch((error)=>console.log(error)
-    );
- }
+  onRegister() {
+    const { email, password, name } = this.state;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+        // Update state with the error, e.g., this.setState({ errors: [error.message] });
+      });
+  }
+  
     render() {
     return (
       <View>
