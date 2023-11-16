@@ -2,10 +2,8 @@ import React,{Component} from "react";
 
 import { Button,TextInput,View } from "react-native";
 
-import React from 'react'
 
-import React, { Component } from 'react'
-import { firebase } from "@react-native-firebase/auth";
+// import { firebase } from "@react-native-firebase/auth";
 
 export class Login extends Component {
     constructor(props){
@@ -18,7 +16,7 @@ export class Login extends Component {
         this.onSignIn=this.onSignIn.bind(this);
 
     }
-    onSignUp(){
+    onSignIn(){
       const{email,password}=this.state;
       firebase.auth().signInWithEmailAndPassword(email,password)
       .then((result)=>{
